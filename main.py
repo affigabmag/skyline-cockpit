@@ -1,7 +1,8 @@
 from fastapi import FastAPI, Query
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, Response
 from database import get_database_info, get_available_dates, get_daily_report_data
 from datetime import datetime
+import json
 
 app = FastAPI(title="My FastAPI App", version="1.0.1")
 
@@ -34,18 +35,31 @@ def get_daily_report(date: str = Query(..., description="Date in YYYY-MM-DD form
 
         # Get daily report data
         report_data = get_daily_report_data(date)
-        return report_data
+
+        # Return pretty formatted JSON
+        return Response(
+            content=json.dumps(report_data, indent=4),
+            media_type="application/json"
+        )
 
     except ValueError:
-        return {
+        error_data = {
             "error": "Invalid date format. Please use YYYY-MM-DD format",
             "parameter_received": date
         }
+        return Response(
+            content=json.dumps(error_data, indent=4),
+            media_type="application/json"
+        )
     except Exception as e:
-        return {
+        error_data = {
             "error": f"Failed to generate daily report: {str(e)}",
             "parameter_received": date
         }
+        return Response(
+            content=json.dumps(error_data, indent=4),
+            media_type="application/json"
+        )
 
 
 @app.get("/users/{user_id}")
