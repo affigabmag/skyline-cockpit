@@ -56,3 +56,25 @@ def test_db_connection() -> bool:
         return True
     except:
         return False
+
+def get_available_dates() -> List[str]:
+    """Get all unique dates from the crane_data table, ordered ascending."""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Get unique dates excluding header row, ordered ascending
+        cursor.execute("""
+            SELECT DISTINCT date_str
+            FROM crane_data
+            WHERE date_str <> 'Date'
+            ORDER BY date_str ASC
+        """)
+
+        dates = [row[0] for row in cursor.fetchall()]
+        conn.close()
+
+        return dates
+
+    except Exception as e:
+        raise Exception(f"Failed to get available dates: {str(e)}")

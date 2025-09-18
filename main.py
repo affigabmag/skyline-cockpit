@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from database import get_database_info
+from database import get_database_info, get_available_dates
 
-app = FastAPI(title="My FastAPI App", version="1.0.0")
+app = FastAPI(title="My FastAPI App", version="1.0.1")
 
 
 @app.get("/")
@@ -17,6 +17,12 @@ def health_check():
         "status": "healthy",
         "database": db_info
     }
+
+
+@app.get("/api/available-dates")
+def get_available_dates_endpoint():
+    dates = get_available_dates()
+    return {"dates": dates}
 
 
 @app.get("/users/{user_id}")
