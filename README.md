@@ -1,6 +1,29 @@
 # Skyline Cockpit - Crane Operations Dashboard
 
-![Dashboard Screenshot](images/dashboard-screenshot.png)
+<img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Directory Structure](#directory-structure)
+- [Technologies Used](#technologies-used)
+  - [Backend Framework](#backend-framework)
+  - [Database](#database)
+  - [Frontend](#frontend)
+- [Database Schema](#database-schema)
+- [API Documentation](#api-documentation)
+  - [Base URL](#base-url)
+  - [Endpoints](#endpoints)
+- [Installation and Setup](#installation-and-setup)
+  - [Prerequisites](#prerequisites)
+  - [Step-by-Step Installation](#step-by-step-installation)
+- [Accessing the Dashboard](#accessing-the-dashboard)
+  - [Main Dashboard](#main-dashboard)
+  - [Dashboard Components](#dashboard-components)
+- [API Usage Examples](#api-usage-examples)
+- [Development](#development)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ## Overview
 
@@ -244,7 +267,7 @@ Open browser and navigate to:
 - Date selector for historical data
 - API menu for direct endpoint access
 
-![Dashboard Interface](images/dashboard-interface.png)
+<img width="1334" height="852" alt="image" src="https://github.com/user-attachments/assets/a184f597-1b26-44f5-9137-19b6690925bd" />
 
 ### Dashboard Components
 
@@ -298,17 +321,6 @@ The application uses raw SQL queries for optimal performance:
 - Date filtering with proper format conversion
 - Aggregation functions for statistics
 - Time-based calculations for durations
-
-## Screenshots
-
-### Dashboard Overview
-![Dashboard Overview](images/dashboard-overview.png)
-
-### API Documentation
-![API Documentation](images/api-docs.png)
-
-### Utilization Chart
-![Utilization Chart](images/utilization-chart.png)
 
 ## Troubleshooting
 
