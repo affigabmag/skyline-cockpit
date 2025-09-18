@@ -6,7 +6,9 @@
       "Bash(venv\\Scripts\\activate:*)",
       "Bash(venv/Scripts/activate:*)",
       "Bash(pip install:*)",
-      "Bash(uvicorn:*)"
+      "Bash(uvicorn:*)",
+      "Bash(start index.html)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
