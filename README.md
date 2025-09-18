@@ -2,6 +2,29 @@
 
 <img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Directory Structure](#directory-structure)
+- [Technologies Used](#technologies-used)
+  - [Backend Framework](#backend-framework)
+  - [Database](#database)
+  - [Frontend](#frontend)
+- [Database Schema](#database-schema)
+- [API Documentation](#api-documentation)
+  - [Base URL](#base-url)
+  - [Endpoints](#endpoints)
+- [Installation and Setup](#installation-and-setup)
+  - [Prerequisites](#prerequisites)
+  - [Step-by-Step Installation](#step-by-step-installation)
+- [Accessing the Dashboard](#accessing-the-dashboard)
+  - [Main Dashboard](#main-dashboard)
+  - [Dashboard Components](#dashboard-components)
+- [API Usage Examples](#api-usage-examples)
+- [Development](#development)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+
 ## Overview
 
 Skyline Cockpit is an interactive web dashboard for monitoring and managing crane operations. The system provides real-time visualization of operational data, utilization metrics, and detailed statistics.
@@ -298,12 +321,6 @@ The application uses raw SQL queries for optimal performance:
 - Date filtering with proper format conversion
 - Aggregation functions for statistics
 - Time-based calculations for durations
-
-Health Check
-<img width="1151" height="933" alt="image" src="https://github.com/user-attachments/assets/df7698d4-3386-40d7-b48d-f32a0be9f951" />
-
-
-
 
 ## Troubleshooting
 
