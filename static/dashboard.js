@@ -2,13 +2,54 @@ class DashboardManager {
     constructor() {
         this.currentDate = null;
         this.availableDates = [];
+        this.utilizationChart = null;
         this.init();
     }
 
     async init() {
         await this.loadAvailableDates();
+        this.initializeChart();
         this.bindEvents();
         this.startRealTimeUpdates();
+    }
+
+    initializeChart() {
+        const ctx = document.getElementById('utilizationChart');
+        if (ctx) {
+            this.utilizationChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [78, 22],
+                        backgroundColor: ['#ff9500', '#555'],
+                        borderWidth: 0,
+                        cutout: '60%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    circumference: 180,
+                    rotation: 270,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
+                }
+            });
+        }
+    }
+
+    updateUtilization(percentage) {
+        if (this.utilizationChart) {
+            this.utilizationChart.data.datasets[0].data = [percentage, 100 - percentage];
+            this.utilizationChart.update();
+        }
+
+        const text = document.querySelector('.utilization-inner');
+        if (text) {
+            text.textContent = `${percentage}%`;
+        }
     }
 
     async loadAvailableDates() {
@@ -84,9 +125,10 @@ class DashboardManager {
     }
 
     updateUtilization(percentage) {
-        const circle = document.querySelector('.utilization-circle');
+        const circle = document.getElementById('utilizationCircle');
         if (circle) {
-            circle.style.background = `conic-gradient(#ff9500 0% ${percentage}%, #333 ${percentage}% 100%)`;
+            const degrees = (percentage / 100) * 180;
+            circle.style.background = `conic-gradient(from 180deg, #ff9500 0deg ${degrees}deg, #555 ${degrees}deg 180deg)`;
         }
 
         const text = document.querySelector('.utilization-inner');

@@ -53,7 +53,12 @@
             <div class="section-title">Utilization</div>
             <div class="utilization-display">
                 <div class="utilization-circle">
+                    <canvas id="utilizationChart"></canvas>
                     <div class="utilization-inner">78%</div>
+                </div>
+                <div class="utilization-labels">
+                    <span>0%</span>
+                    <span>100%</span>
                 </div>
             </div>
         </div>
@@ -81,6 +86,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="/static/dashboard.js"></script>
 </body>
 </html>

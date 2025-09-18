@@ -97,29 +97,71 @@ body {
     margin-bottom: 30px;
 }
 
-.utilization-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: conic-gradient(#ff9500 0% 76%, #333 76% 100%);
-    margin: 0 auto 20px;
+.utilization-display {
+    text-align: center;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.utilization-circle {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+#utilizationChart {
+    width: 300px;
+    height: 150px;
 }
 
 .utilization-inner {
-    width: 140px;
-    height: 140px;
-    background: #000;
-    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+}
+
+.utilization-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #ccc;
+    position: relative;
+    top: 5px;
+}
+
+.utilization-inner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    background: #222;
+    border-radius: 100px 100px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
+}
+
+.utilization-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #ccc;
+    position: relative;
+    top: 5px;
 }
 
 .operations-grid {
