@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from database import get_database_info
 
 app = FastAPI(title="My FastAPI App", version="1.0.0")
 
@@ -11,7 +12,11 @@ def read_root():
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy"}
+    db_info = get_database_info()
+    return {
+        "status": "healthy",
+        "database": db_info
+    }
 
 
 @app.get("/users/{user_id}")
