@@ -299,6 +299,12 @@ The application uses raw SQL queries for optimal performance:
 - Aggregation functions for statistics
 - Time-based calculations for durations
 
+Health Check
+<img width="1151" height="933" alt="image" src="https://github.com/user-attachments/assets/df7698d4-3386-40d7-b48d-f32a0be9f951" />
+
+
+
+
 ## Troubleshooting
 
 ### Common Issues
