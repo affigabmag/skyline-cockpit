@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from fastapi.responses import HTMLResponse
 from database import get_database_info, get_available_dates
+from datetime import datetime
 
 app = FastAPI(title="My FastAPI App", version="1.0.1")
 
@@ -23,6 +24,25 @@ def health_check():
 def get_available_dates_endpoint():
     dates = get_available_dates()
     return {"dates": dates}
+
+
+@app.get("/api/daily-report")
+def get_daily_report(date: str = Query(..., description="Date in YYYY-MM-DD format")):
+    try:
+        # Validate date format
+        parsed_date = datetime.strptime(date, "%Y-%m-%d")
+        formatted_date = parsed_date.strftime("%Y-%m-%d")
+
+        return {
+            "date": formatted_date,
+            "message": f"Daily report for {formatted_date}",
+            "parameter_received": date
+        }
+    except ValueError:
+        return {
+            "error": "Invalid date format. Please use YYYY-MM-DD format",
+            "parameter_received": date
+        }
 
 
 @app.get("/users/{user_id}")
