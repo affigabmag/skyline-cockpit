@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Cockpit - Crane Operations Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+    <div class="api-indicator">
+        API: /api/available-dates
+        <div class="loading-spinner" id="loadingSpinner"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-left">
+                🏗️ Skyline Cockpit
+            </div>
+            <div class="header-center">
+                <div class="title-center">Daily Crane Report</div>
+                <select class="date-dropdown" id="dateDropdown">
+                    <option value="">Loading...</option>
+                </select>
+            </div>
+            <div class="header-right"></div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="startTime">7:03</div>
+                <div class="stat-label">Start Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="endTime">16:47</div>
+                <div class="stat-label">End Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="workingHours">9:44</div>
+                <div class="stat-label">Working Hours</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="utilizedHours">7:25</div>
+                <div class="stat-label">Utilized Hours</div>
+            </div>
+        </div>
+
+        <div class="utilization-section">
+            <div class="section-title">Utilization</div>
+            <div class="utilization-display">
+                <div class="utilization-circle">
+                    <div class="utilization-inner">76%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="utilization-section">
+            <div class="section-title">Utilization Breakdown</div>
+            <div class="operations-grid">
+                <div class="operation-card" data-operation="moving_with_load">
+                    <div class="operation-label">Moving with Load</div>
+                    <div class="operation-value">00:48</div>
+                </div>
+                <div class="operation-card" data-operation="moving_without_load">
+                    <div class="operation-label">Moving without Load</div>
+                    <div class="operation-value">05:33</div>
+                </div>
+                <div class="operation-card" data-operation="idle_with_load">
+                    <div class="operation-label">Idle with Load</div>
+                    <div class="operation-value">00:59</div>
+                </div>
+                <div class="operation-card" data-operation="idle_without_load">
+                    <div class="operation-label">Idle without Load</div>
+                    <div class="operation-value">02:18</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>
