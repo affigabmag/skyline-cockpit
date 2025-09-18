@@ -7,39 +7,39 @@
     <link rel="stylesheet" href="/static/dashboard.css">
 </head>
 <body>
+    <div class="logo-top-left">
+        🏗️ Skyline Cockpit
+    </div>
+
     <div class="api-indicator">
-        API: /api/available-dates
+        <span>API: /api/available-dates</span>
         <div class="loading-spinner" id="loadingSpinner"></div>
+        <div class="hamburger-menu" id="hamburgerMenu">☰</div>
     </div>
 
     <div class="container">
-        <div class="header">
-            <div class="logo-left">
-                🏗️ Skyline Cockpit
-            </div>
-            <div class="header-center">
-                <div class="title-center">Daily Crane Report</div>
-                <select class="date-dropdown" id="dateDropdown">
-                    <option value="">Loading...</option>
-                </select>
-            </div>
-            <div class="header-right"></div>
+        <div class="header-center">
+            <div class="title-center">Daily Crane Report</div>
+            <select class="date-dropdown" id="dateDropdown">
+                <option value="">Loading...</option>
+            </select>
+        </div>
         
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-value" id="startTime">7:03</div>
+                <div class="stat-value" id="startTime">05:57</div>
                 <div class="stat-label">Start Time</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="endTime">16:47</div>
+                <div class="stat-value" id="endTime">15:54</div>
                 <div class="stat-label">End Time</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="workingHours">9:44</div>
+                <div class="stat-value" id="workingHours">9:56</div>
                 <div class="stat-label">Working Hours</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="utilizedHours">7:25</div>
+                <div class="stat-value" id="utilizedHours">7:42</div>
                 <div class="stat-label">Utilized Hours</div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="section-title">Utilization</div>
             <div class="utilization-display">
                 <div class="utilization-circle">
-                    <div class="utilization-inner">76%</div>
+                    <div class="utilization-inner">78%</div>
                 </div>
             </div>
         </div>
@@ -58,19 +58,19 @@
             <div class="operations-grid">
                 <div class="operation-card" data-operation="moving_with_load">
                     <div class="operation-label">Moving with Load</div>
-                    <div class="operation-value">00:48</div>
+                    <div class="operation-value">02:33</div>
                 </div>
                 <div class="operation-card" data-operation="moving_without_load">
                     <div class="operation-label">Moving without Load</div>
-                    <div class="operation-value">05:33</div>
+                    <div class="operation-value">01:07</div>
                 </div>
                 <div class="operation-card" data-operation="idle_with_load">
                     <div class="operation-label">Idle with Load</div>
-                    <div class="operation-value">00:59</div>
+                    <div class="operation-value">05:08</div>
                 </div>
                 <div class="operation-card" data-operation="idle_without_load">
                     <div class="operation-label">Idle without Load</div>
-                    <div class="operation-value">02:18</div>
+                    <div class="operation-value">01:00</div>
                 </div>
             </div>
         </div>
