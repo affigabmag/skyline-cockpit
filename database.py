@@ -114,6 +114,35 @@ def get_daily_report_data(date_param: str) -> Dict[str, Any]:
         """, (db_date_format,))
         utilized_records = cursor.fetchone()[0]
 
+        # Get breakdown data for each category
+        # Moving with load (is_moving=1, is_loaded=1)
+        cursor.execute("""
+            SELECT COUNT(*), AVG(weight_rounded) FROM crane_data
+            WHERE date_str = ? AND is_moving = 1 AND is_loaded = 1
+        """, (db_date_format,))
+        moving_with_load = cursor.fetchone()
+
+        # Moving without load (is_moving=1, is_loaded=0)
+        cursor.execute("""
+            SELECT COUNT(*), AVG(weight_rounded) FROM crane_data
+            WHERE date_str = ? AND is_moving = 1 AND is_loaded = 0
+        """, (db_date_format,))
+        moving_without_load = cursor.fetchone()
+
+        # Idle with load (is_moving=0, is_loaded=1)
+        cursor.execute("""
+            SELECT COUNT(*), AVG(weight_rounded) FROM crane_data
+            WHERE date_str = ? AND is_moving = 0 AND is_loaded = 1
+        """, (db_date_format,))
+        idle_with_load = cursor.fetchone()
+
+        # Idle without load (is_moving=0, is_loaded=0)
+        cursor.execute("""
+            SELECT COUNT(*), AVG(weight_rounded) FROM crane_data
+            WHERE date_str = ? AND is_moving = 0 AND is_loaded = 0
+        """, (db_date_format,))
+        idle_without_load = cursor.fetchone()
+
         conn.close()
 
         # Calculate working hours and utilization
@@ -163,24 +192,24 @@ def get_daily_report_data(date_param: str) -> Dict[str, Any]:
             },
             "breakdown": {
                 "moving_with_load": {
-                    "duration": "00:48",
-                    "records": 123,
-                    "avg_weight": 2.3
+                    "duration": f"{(moving_with_load[0] // 3600):02d}:{((moving_with_load[0] % 3600) // 60):02d}",
+                    "records": moving_with_load[0],
+                    "avg_weight": round(moving_with_load[1] or 0.0, 1)
                 },
                 "moving_without_load": {
-                    "duration": "05:33",
-                    "records": 875,
-                    "avg_weight": 0.0
+                    "duration": f"{(moving_without_load[0] // 3600):02d}:{((moving_without_load[0] % 3600) // 60):02d}",
+                    "records": moving_without_load[0],
+                    "avg_weight": round(moving_without_load[1] or 0.0, 1)
                 },
                 "idle_with_load": {
-                    "duration": "00:59",
-                    "records": 89,
-                    "avg_weight": 1.8
+                    "duration": f"{(idle_with_load[0] // 3600):02d}:{((idle_with_load[0] % 3600) // 60):02d}",
+                    "records": idle_with_load[0],
+                    "avg_weight": round(idle_with_load[1] or 0.0, 1)
                 },
                 "idle_without_load": {
-                    "duration": "02:18",
-                    "records": 160,
-                    "avg_weight": 0.0
+                    "duration": f"{(idle_without_load[0] // 3600):02d}:{((idle_without_load[0] % 3600) // 60):02d}",
+                    "records": idle_without_load[0],
+                    "avg_weight": round(idle_without_load[1] or 0.0, 1)
                 }
             }
         }
