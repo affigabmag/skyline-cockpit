@@ -1,6 +1,6 @@
 # Skyline Cockpit - Crane Operations Dashboard
 
-![Dashboard Screenshot](images/dashboard-screenshot.png)
+<img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
 
 ## Overview
 
