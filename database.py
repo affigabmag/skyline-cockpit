@@ -160,6 +160,28 @@ def get_daily_report_data(date_param: str) -> Dict[str, Any]:
                 "working_hours": working_hours,
                 "utilized_hours": utilized_hours,
                 "utilization_percent": utilization_percent
+            },
+            "breakdown": {
+                "moving_with_load": {
+                    "duration": "00:48",
+                    "records": 123,
+                    "avg_weight": 2.3
+                },
+                "moving_without_load": {
+                    "duration": "05:33",
+                    "records": 875,
+                    "avg_weight": 0.0
+                },
+                "idle_with_load": {
+                    "duration": "00:59",
+                    "records": 89,
+                    "avg_weight": 1.8
+                },
+                "idle_without_load": {
+                    "duration": "02:18",
+                    "records": 160,
+                    "avg_weight": 0.0
+                }
             }
         }
 
