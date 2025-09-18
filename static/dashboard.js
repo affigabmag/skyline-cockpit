@@ -118,6 +118,22 @@ class DashboardManager {
                 await this.loadDateData(e.target.value);
             });
         }
+
+        // Hamburger menu functionality
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        if (hamburgerMenu && dropdownMenu) {
+            hamburgerMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                dropdownMenu.classList.remove('show');
+            });
+        }
     }
 
     startRealTimeUpdates() {

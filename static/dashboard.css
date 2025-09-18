@@ -161,6 +161,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    z-index: 1001;
 }
 
 .hamburger-menu {
@@ -173,6 +174,36 @@ body {
 
 .hamburger-menu:hover {
     background-color: rgba(0, 168, 255, 0.2);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: #222;
+    border: 1px solid #00a8ff;
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 180px;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #00a8ff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(0, 168, 255, 0.1);
+}
+
+.dropdown-menu.show {
+    display: block;
 }
 
 .loading-spinner {
