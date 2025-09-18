@@ -244,7 +244,7 @@ Open browser and navigate to:
 - Date selector for historical data
 - API menu for direct endpoint access
 
-![Dashboard Interface](images/dashboard-interface.png)
+<img width="1334" height="852" alt="image" src="https://github.com/user-attachments/assets/a184f597-1b26-44f5-9137-19b6690925bd" />
 
 ### Dashboard Components
 
@@ -298,17 +298,6 @@ The application uses raw SQL queries for optimal performance:
 - Date filtering with proper format conversion
 - Aggregation functions for statistics
 - Time-based calculations for durations
-
-## Screenshots
-
-### Dashboard Overview
-![Dashboard Overview](images/dashboard-overview.png)
-
-### API Documentation
-![API Documentation](images/api-docs.png)
-
-### Utilization Chart
-![Utilization Chart](images/utilization-chart.png)
 
 ## Troubleshooting
 
