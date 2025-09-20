@@ -7,7 +7,7 @@
 Hosted on Render.com free tier.
 
 > [!WARNING]
-> **It might take up to 1 minute for the app to wake up due to using a free hosting plan on render.com.**
+> **It might take few minutes for the app to wake up due to using a free hosting plan on render.com.**
 
 ## Table of Contents
 
