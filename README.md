@@ -1,8 +1,6 @@
 # Skyline Cockpit - Crane Operations Dashboard
 
-<<<<<<< HEAD
-<img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
-=======
+
 <img width="1350" height="1015" alt="skyline-cockpit onrender com_dashboard" src="https://github.com/user-attachments/assets/f4ba63e1-ec5b-4c42-9183-9cdd6915dfa3" />
 
 ## 🚀 **[Live Demo - Experience it here!](https://skyline-cockpit.onrender.com/dashboard)**
@@ -11,7 +9,6 @@ Hosted on Render.com free tier.
 
 > [!WARNING]
 > **It might take few minutes for the app to wake up due to using a free hosting plan on render.com.**
->>>>>>> c0e7a16acf844009bbef8da0aac62b7b90fed0cb
 
 ## Table of Contents
 
@@ -44,20 +41,82 @@ Skyline Cockpit is an interactive web dashboard for monitoring and managing cran
 
 ```
 skyline-cockpit/
-├── README.md
-├── requirements.txt
-├── main.py                 # FastAPI application entry point
-├── database.py             # Database connection and queries
-├── db/
-│   ├── crane_data.db      # SQLite database file
-│   ├── create_db.sql      # Database schema
-│   └── sample_data.csv    # Sample crane data
-├── templates/
-│   └── dashboard.html     # Dashboard HTML template
-├── static/
-│   ├── dashboard.css      # Dashboard styling
-│   └── dashboard.js       # Dashboard JavaScript functionality
-└── .gitignore
++-- acc/
+|   +-- doc_consolidated.ps1 (25.16 KB)
++-- db/
+|   +-- crane_data.db (7660 KB)
+|   |       Table: crane_data
+|   |           Rows: 35429
+|   |           datetime_str : TEXT
+|   |           utc_time : TEXT
+|   |           date_str : TEXT
+|   |           time_str : TEXT
+|   |           position_x : REAL
+|   |           position_y : REAL
+|   |           position_z : REAL
+|   |           slew : REAL
+|   |           jib : REAL
+|   |           hoist : REAL
+|   |           weight : REAL
+|   |           wind : REAL
+|   |           cable_weight : REAL
+|   |           seconds : INTEGER
+|   |           controller_is_moving : INTEGER
+|   |           controller_direction : INTEGER
+|   |           controller_g2 : INTEGER
+|   |           controller_g3 : INTEGER
+|   |           is_prev : TEXT
+|   |           weight_rounded : REAL
+|   |           weight_fixed : REAL
+|   |           weight_smooth : REAL
+|   |           weight_by_controller_direction : REAL
+|   |           is_moving : INTEGER
+|   |           is_loaded : INTEGER
+|   |           state : TEXT
+|   |           state_grouping : REAL
+|   |           grouping_lifting_events : REAL
+|   |           grouping_moving_events : REAL
+|   +-- create_db.sql (0.68 KB)
+|   +-- sample_data.csv (9808.97 KB)
++-- static/
+|   +-- dashboard.css (4.73 KB)
+|   +-- dashboard.js (6.57 KB)
++-- templates/
+|   +-- dashboard.html (3.74 KB)
++-- .gitignore (4.78 KB)
++-- database.py (7.75 KB)
+|           import sqlite3
+|           import os
+|           from typing import List, Dict, Any
+|           from datetime import datetime, timedelta
+|   
+|           def get_db_connection()
+|               '''Get a connection to the SQLite database.'''
+|           # Constants:
+|           DATABASE_PATH
++-- LICENSE (1.07 KB)
++-- main.py (5.74 KB)
+|           from fastapi import FastAPI, Query
+|           from fastapi.responses import HTMLResponse, Response
+|           from fastapi.staticfiles import StaticFiles
+|           from database import get_database_info, get_available_dates, get_daily_report_data
+|           from datetime import datetime
+|           import json
+|   
+|           def read_root()
+|           def get_report()
+|           def get_dashboard()
+|           def health_check()
+|           def get_available_dates_endpoint()
+|           def read_user()
+|           def create_user()
+|           def custom_docs()
++-- README.md (9.74 KB)
++-- requirements.txt (0.06 KB)
+            # Python Dependencies:
+            fastapi==0.116.2
+            uvicorn[standard]==0.35.0
+            sqlalchemy==2.0.43
 ```
 
 ## Technologies Used
