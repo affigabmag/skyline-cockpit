@@ -1,6 +1,17 @@
 # Skyline Cockpit - Crane Operations Dashboard
 
+<<<<<<< HEAD
 <img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
+=======
+<img width="1350" height="1015" alt="skyline-cockpit onrender com_dashboard" src="https://github.com/user-attachments/assets/f4ba63e1-ec5b-4c42-9183-9cdd6915dfa3" />
+
+## 🚀 **[Live Demo - Experience it here!](https://skyline-cockpit.onrender.com/dashboard)**
+
+Hosted on Render.com free tier.
+
+> [!WARNING]
+> **It might take few minutes for the app to wake up due to using a free hosting plan on render.com.**
+>>>>>>> c0e7a16acf844009bbef8da0aac62b7b90fed0cb
 
 ## Table of Contents
 
@@ -46,10 +57,6 @@ skyline-cockpit/
 ├── static/
 │   ├── dashboard.css      # Dashboard styling
 │   └── dashboard.js       # Dashboard JavaScript functionality
-├── images/
-│   ├── dashboard-screenshot.png
-│   ├── api-endpoints.png
-│   └── utilization-chart.png
 └── .gitignore
 ```
 
