@@ -46,10 +46,6 @@ skyline-cockpit/
 ├── static/
 │   ├── dashboard.css      # Dashboard styling
 │   └── dashboard.js       # Dashboard JavaScript functionality
-├── images/
-│   ├── dashboard-screenshot.png
-│   ├── api-endpoints.png
-│   └── utilization-chart.png
 └── .gitignore
 ```
 
