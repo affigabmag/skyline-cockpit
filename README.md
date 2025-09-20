@@ -2,6 +2,12 @@
 
 <img width="1220" height="873" alt="image" src="https://github.com/user-attachments/assets/3b0eed9b-f263-48e7-9503-cebb9e3f04ce" />
 
+## 🚀 **[Live Demo - Experience it here!](https://skyline-cockpit.onrender.com/dashboard)**
+
+Hosted on Render.com free tier.
+
+⚠️ **Note:** <span style="color: red">It might take up to 1 minute for the app to wake up due to using a free hosting plan on render.com.</span>
+
 ## Table of Contents
 
 - [Overview](#overview)
